@@ -1,4 +1,5 @@
 # dot-geoip
+
 DotKernel component based on Maxmind's [geoip2/geoip2](https://github.com/maxmind/GeoIP2-php) package, using [db-ip.com's free GeoLite2 databases](https://db-ip.com/db/) to provide geographical details about an IP address.
 
 ![OSS Lifecycle](https://img.shields.io/osslifecycle/dotkernel/dot-geoip)
@@ -37,16 +38,21 @@ Register the library's synchronizer command by adding the following line to your
 ## Manage GeoLite2 database
 
 You can download/update a specific GeoLite2 database, by running the following command:
+
 ```bash
 php bin/cli.php geoip:synchronize -d {DATABASE}
 ```
+
 Where _{DATABASE}_ takes one of the following values: `asn`, `city`, `country`.
 
 You can download/update all GeoLite2 databases at once, by running the following command:
+
 ```bash
 php bin/cli.php geoip:synchronize
 ```
+
 The output should be similar to the below, displaying per row: `database identifier`: `previous build datetime` -> `current build datetime`.
+
 ```text
 asn: n/a -> 2021-07-01 02:09:34
 city: n/a -> 2021-07-01 02:09:20
@@ -59,6 +65,7 @@ Get help for this command by running `php bin/cli.php help geoip:synchronize`.
 
 
 ## Usage
+
 Below is an example implementation of using DotGeoip to retrieve information about an IP address.
 
 ```php
